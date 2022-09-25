@@ -7,3 +7,11 @@ keymap.set('n', '<leader>ff', '<cmd>lua require("telescope.builtin").find_files(
 keymap.set('n', '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>', default_opts)
 keymap.set('n', '<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>', default_opts)
 keymap.set('n', '<leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>', default_opts)
+
+
+-- do not yank with x
+keymap.set('n', 'x', '"_x', default_opts)
+
+
+-- select all
+keymap.set('n', '<C-a>', 'gg<S-v>G', default_opts)
