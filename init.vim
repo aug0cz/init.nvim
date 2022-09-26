@@ -16,6 +16,7 @@ call plug#end()
 
 
 lua require("plugins")
+
 lua require("basic")
 lua require("lsp.setup")
 lua require("lsp.cmp")

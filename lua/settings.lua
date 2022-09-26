@@ -2,9 +2,9 @@ vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
 
-require('nvim-tree').setup({
-  sort_by = "case_sensitive"
-})
+-- require('nvim-tree').setup({
+--   sort_by = "case_sensitive"
+-- })
 
 
 local telescope = require("telescope")
@@ -48,4 +48,3 @@ require("mason-lspconfig").setup({
 })
 
 require('lualine').setup()
-

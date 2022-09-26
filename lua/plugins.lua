@@ -1,7 +1,21 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
+
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
@@ -28,7 +42,10 @@ return require('packer').startup(function(use)
   	'hrsh7th/cmp-buffer',
   	'hrsh7th/cmp-path',
   	after = 'nvim-cmp' }
-  use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
+  use { 
+    'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' },
+    config = [[require('config.nvim-tree')]]
+  }
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
   -- 自动符号补全，成对出现
   use {
@@ -49,4 +66,19 @@ return require('packer').startup(function(use)
     setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
     ft = { "markdown" },
   }
+  use {
+    "akinsho/toggleterm.nvim", tag = '*', config = function()
+      require('toggleterm').setup()
+    end
+  }
+  use {
+    'akinsho/bufferline.nvim', requires = { 'kyazdani42/nvim-web-devicons' },
+    event = "VimEnter", config = function()
+      require("config.bufferline")
+    end,
+  }
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
+
