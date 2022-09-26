@@ -28,3 +28,13 @@ mason.nvim 安装lsp语言服务，如果无法找到路径。需要添加PATH
 export PATH="~/.local/share/nvim/mason/bin":$PATH
 ```
 
+
+## 字体安装
+
+[MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)  
+[MesloLGS NF
+Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)  
+[MesloLGS NF
+Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)  
+[MesloLGS NF Bold
+Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
