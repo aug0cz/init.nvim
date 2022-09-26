@@ -31,7 +31,20 @@ telescope.setup({
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-  automatic_installation = true,
+  ensure_installed = {
+    "sumneko_lua",
+    "bashls",
+    "cssls",
+    "cssmodules_ls",
+    "eslint",
+    "emmet_ls",
+    "html",
+    "jsonls",
+    "tsserver",
+    "pyright",
+    "volar",
+    -- "prettier" not lsp,  is formatter
+  }
 })
 
 require('lualine').setup()
