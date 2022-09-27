@@ -77,6 +77,14 @@ return require('packer').startup(function(use)
       require("config.bufferline")
     end,
   }
+
+  -- comment 注释功能
+  use {
+    'numToStr/Comment.nvim',
+    config = [[require('Comment').setup()]]
+  }
+
+
   if packer_bootstrap then
     require('packer').sync()
   end

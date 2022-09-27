@@ -69,4 +69,5 @@ require('lspconfig')["sumneko_lua"].setup{}
 require('lspconfig')["vimls"].setup{}
 require('lspconfig')["cssmodules_ls"].setup{}
 require('lspconfig')["bashls"].setup{}
+require('lspconfig')["clangd"].setup{}
 

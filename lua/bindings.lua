@@ -15,3 +15,14 @@ keymap.set('n', 'x', '"_x', default_opts)
 
 -- select all
 keymap.set('n', '<C-a>', 'gg<S-v>G', default_opts)
+
+
+-- insert modes mapping
+-- emacs-styles move
+-- noremap! apply insert-mode & command-mode
+keymap.set('!', '<C-a>', '<Home>', { noremap=true })
+keymap.set('!', '<C-e>', '<End>', { noremap=true })
+keymap.set('!', '<C-f>', '<Right>', { noremap=true })
+keymap.set('!', '<C-b>', '<Left>', { noremap=true })
+keymap.set('!', '<M-f>', '<S-Right>', { noremap=true })
+keymap.set('!', '<M-b>', '<S-Left>', { noremap=true })
